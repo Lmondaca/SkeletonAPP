@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <form (ngSubmit)="capturarDatos()" #formulario="ngForm">
+      <ion-list>
+        <ion-item>
+            <ion-input
+              label="Usuario"
+              label-placement="floating"
+              fill="outline"
+              placeholder="Ingrese Su Usuario"
+              [(ngModel)]="usuario"
+              name="usuario"
+              required>
+              
+            </ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input label=""
+          [disabled]="true"
+          >
+
+          </ion-input>
+
+        </ion-item>
+
+
+        <ion-item>
+          <ion-input
+            label="Contraseña"
+            label-placement="floating"
+            type="password"
+            fill="outline"
+            placeholder="Ingrese Su Contraseña"
+            [(ngModel)]="password"
+            name="nombre"
+            required>
+          </ion-input>
+      </ion-item>
+      <!-- <ion-item>
+        <ion-input
+          label="Apellidos"
+          label-placement="floating"
+          fill="outline"
+          placeholder="Ingrese Sus Apellidos"
+          [(ngModel)]="apellidos"
+          name="apellidos"
+          required>
+        </ion-input>
+    </ion-item> -->
+
+
+      </ion-list>
+      <ion-button expand="full" type="submit" color="danger">Carpturar Data</ion-button>
+  </form>
+</ion-content>
