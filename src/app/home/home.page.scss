@@ -25,3 +25,23 @@
 #container a {
   text-decoration: none;
 }
+.fondo {
+  --background: #1B1313;
+  color: #806E6E;
+}
+.logo-strip {
+  display: flex;
+  align-items: center;
+  background-color: #190D0D;
+}
+
+.logo-small {
+  margin: 10px auto;
+  width: auto;
+  height: 40px;
+  padding-left: 5px;
+
+  &:first-child {
+    padding-left: 0; /* mantener comportamiento original del primer img */
+  }
+}

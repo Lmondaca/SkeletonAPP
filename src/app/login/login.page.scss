@@ -21,22 +21,23 @@
 	margin-top: 12px;
 }
 
-/* Estilos movidos desde inline styles en login.page.html */
+
 .logo-strip {
-	text-align: center;
-	background-color: #190D0D;
+  text-align: center;
+  background-color: #190D0D;
 }
 
 .logo-small {
-	margin: 10px auto;
-	width: 30%;
-	height: 30px;
-	padding-left: 5px;
+  margin: 10px auto;
+  width: 30%;
+  height: 30px;
+  padding-left: 5px;
+
+  &:first-child {
+    padding-left: 0; /* mantener comportamiento original del primer img */
+  }
 }
 
-.logo-small:first-child {
-	padding-left: 0; /* mantener comportamiento original del primer img */
-}
 
 .main-logo {
 	display: block;

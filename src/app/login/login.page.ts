@@ -33,6 +33,10 @@ export class LoginPage implements OnInit {
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailRegex.test(email);
     }
+  validarPassword(password: string): boolean {
+      const passwordRegex = /^[0-9]{4}$/;
+      return passwordRegex.test(password);
+    }
 
   ingresar(){
 
@@ -40,7 +44,7 @@ export class LoginPage implements OnInit {
       this.mostrarAlerta('El campo de usuario es obligatorio.');
       return;
     }
-    if (!this.validarEmail(this.user.usuario)) {
+    if (!this.validarEmail(this.user.usuario) && this.user.usuario.length > 3 && this.user.usuario.length < 9) {
       this.mostrarAlerta('Por favor, ingrese un correo electrónico válido.');
       return;
     }
@@ -48,8 +52,8 @@ export class LoginPage implements OnInit {
       this.mostrarAlerta('El campo de contraseña es obligatorio.');
       return;
     }
-    if (this.user.password.length < 6) {
-      this.mostrarAlerta('La contraseña debe tener al menos 6 caracteres.');
+    if (!this.validarPassword(this.user.password)) {
+      this.mostrarAlerta('La contraseña debe tener exactamente 4 dígitos (0-9)');
       return;
     }
 
