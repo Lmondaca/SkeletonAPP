@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-   <div style="text-align: center; background-color: #190D0D;">
-    <img src="assets/img/monke_smile.jpg" alt="Logo" style="  margin: 10px auto; width: 30%; height: 30px;">
-    <img src="assets/img/monke_smile.jpg" alt="Logo" style=" padding-left: 5px; margin: 10px auto; width: 30%; height: 30px;">
-    <img src="assets/img/monke_smile.jpg" alt="Logo" style="padding-left: 5px; margin: 10px auto; width: 30%; height: 30px;">
+   <div class="logo-strip">
+    <img src="assets/img/monke_smile.jpg" alt="Logo" class="logo-small">
+    <img src="assets/img/monke_smile.jpg" alt="Logo" class="logo-small">
+    <img src="assets/img/monke_smile.jpg" alt="Logo" class="logo-small">
   </div>
   </ion-toolbar>
 </ion-header>
@@ -11,11 +11,11 @@
 <ion-content [fullscreen]="true" >
 
   <div class="login-wrapper ion-text-center">
-    <img src="assets/img/Le_monke.webp" alt="Logo" style="display: block; margin: 20px auto; width: 100px; height: 200px;">
+    <img src="assets/img/Le_monke.webp" alt="Logo" class="main-logo">
     <h1>
       ¡Bienvenido a Le Monke App!
     </h1>
-    <ion-text class="ion-padding-top">
+    <!-- <ion-text class="ion-padding-top">
       <ion-input label="Nombre de Usuario" labelPlacement="floating" placeholder="Ingrese su usuario"></ion-input>
     </ion-text>
     <ion-text class="ion-padding-top">
@@ -23,8 +23,29 @@
     </ion-text>
     <div class="ion-padding-top ">
       <ion-button color="medium">Inicia sesión</ion-button> <ion-button color="medium" [disabled]="true">Registrar</ion-button>
-    </div>
+    </div> -->
     
-  </div>
   
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="full">
+        
+        <ion-input label="Nombre de Usuario" labelPlacement="floating" type="text" placeholder="Ingrese su usuario" [(ngModel)]="user.usuario"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        
+        <ion-input label="Contraseña" labelPlacement="floating" type="password" placeholder="Ingrese su Contraseña" [(ngModel)]="user.password"></ion-input>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <ion-button color="medium" expand="full" class="ion-margin-top" (click)="ingresar()">Ingresar</ion-button>
+          
+        </ion-col>
+        <ion-col>
+          <ion-button color="medium" expand="full" class="ion-margin-top" [disabled]="true">Registrar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  </div>
 </ion-content>
