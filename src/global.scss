@@ -10,6 +10,7 @@
  */
 
 /* Core CSS required for Ionic components to work properly */
+@use '@angular/material' as mat;
 @import "@ionic/angular/css/core.css";
 
 /* Basic CSS for apps built with Ionic */
@@ -35,3 +36,23 @@
 /* @import "@ionic/angular/css/palettes/dark.always.css"; */
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
+
+
+
+:root {
+  @include mat.datepicker-overrides((
+    calendar-body-label-text-color: #ffffff,
+    calendar-container-background-color: #3E3737,
+    calendar-container-shape: 5px,
+    
+  ));
+  
+}
+
+.mat-datepicker-content {
+  box-shadow: 0 2px 4px -1px #0003, 0 4px 5px #00000024, 0 1px 10px #0000001f;
+  background-color: #3E3737;
+  color: #fff;
+}
+
+
