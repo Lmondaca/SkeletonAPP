@@ -32,7 +32,13 @@
   </ion-item>
   <ion-item class="ion-padding-horizontal">
     <ion-label position="stacked" class="ion-padding-bottom">Fecha Nacimiento</ion-label>
-    <ion-input type="date" [(ngModel)]="data.nacimiento"></ion-input>
+    <!-- <ion-input type="date" [(ngModel)]="data.nacimiento"></ion-input> -->
+
+  <input class="mat-datepicker-content"  matInput [matDatepicker]="picker" [(ngModel)]="data.nacimiento">
+  <mat-hint>MM/DD/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker  #picker></mat-datepicker>
+
   </ion-item>
   <ion-grid>
     <ion-row>
@@ -48,4 +54,6 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+
+
 </ion-content>
